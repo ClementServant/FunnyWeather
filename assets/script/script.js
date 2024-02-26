@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
           console.log(weatherData)
 
           const locationBox = document.querySelector('.location-box')
-          locationBox.innerHTML = ''
+          //   locationBox.innerHTML = ''
 
           // Créer les éléments HTML de façon dynamique
 
