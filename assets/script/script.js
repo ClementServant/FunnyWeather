@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
   document
     .querySelector('.fa-magnifying-glass')
     .addEventListener('click', async function () {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
           console.log(weatherData)
 
           const locationBox = document.querySelector('.location-box')
-          //   locationBox.innerHTML = ''
+          locationBox.innerHTML = ''
 
           // Créer les éléments HTML de façon dynamique
 
