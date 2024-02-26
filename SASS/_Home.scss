@@ -21,53 +21,159 @@
     background: rgba(103, 100, 127, 0.7);
     border-radius: 15px;
     padding: 20px;
-  }
 
-  .search-bar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 55px;
-    color: $text-color;
-
-    .fa-location-dot {
-      position: absolute;
-      left: 10px;
-      font-size: 25px;
-    }
-
-    input {
-      position: absolute;
+    .search-bar {
+      position: relative;
+      display: flex;
+      align-items: center;
       width: 100%;
-      height: 100%;
-      background: transparent;
-      border: 3px solid #fc2ce7;
-      outline: none;
+      height: 55px;
       color: $text-color;
-      font-size: 25px;
-      font-weight: 500;
-      padding: 0 42px;
+
+      .fa-location-dot {
+        position: absolute;
+        left: 10px;
+        font-size: 25px;
+      }
+
+      input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: 3px solid $primary-color;
+        outline: none;
+        color: $text-color;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 0 42px;
+      }
+
+      #location::placeholder {
+        text-transform: uppercase;
+      }
+
+      .fa-magnifying-glass {
+        position: absolute;
+        text-align: center;
+        right: -10px;
+        top: 0;
+        width: 40px;
+        height: 100%;
+        background: transparent;
+        color: $text-color;
+        border: none;
+        outline: none;
+        font-size: 25px;
+        padding: 0 48px 0 5px;
+        cursor: pointer;
+      }
     }
 
-    #location::placeholder {
-      text-transform: uppercase;
+    .location-box {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+
+      .city {
+        width: 50%;
+        height: auto;
+        font-size: 24px;
+      }
+
+      .weather-description {
+        width: 50%;
+        height: auto;
+        font-size: 18px;
+      }
+
+      .wi-owm {
+        display: flex;
+        align-items: flex-end;
+        justify-content: right;
+        width: 50%;
+        height: 100%;
+      }
     }
 
-    .fa-magnifying-glass {
-      position: absolute;
-      text-align: center;
-      right: -10px;
-      top: 0;
-      width: 40px;
-      height: 100%;
-      background: transparent;
-      color: $text-color;
-      border: none;
-      outline: none;
-      font-size: 25px;
-      padding: 0 48px 0 5px;
-      cursor: pointer;
+    .weather-details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .details-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: auto;
+
+        .temperature {
+          font-size: 32px;
+          font-weight: 800;
+        }
+      }
+
+      .details-infos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        height: auto;
+        gap: 10px;
+
+        .container-wind {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          width: 100%;
+          gap: 10px;
+
+          .fa-wind .details-weather {
+            font-size: 18px;
+          }
+        }
+
+        .container-droplet {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          width: 100%;
+          gap: 10px;
+
+          .fa-droplet .humidity-info {
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+
+        .container-pressure {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          width: 100%;
+          gap: 10px;
+
+          .pressure-name {
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+
+        .container-visibility {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          width: 100%;
+          gap: 10px;
+
+          .visibility {
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+      }
     }
   }
 }

@@ -11,4 +11,14 @@ body {
   background-image: url('../assets/images/neda-astani-KWTkd7mHqKE-unsplash.jpg');
   background-size: cover;
   background-position: center;
+  animation: effetBackground 5s infinite linear;
+}
+
+@keyframes effetBackground {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
