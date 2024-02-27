@@ -111,6 +111,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         details.appendChild(containerVisibility)
         containerVisibility.appendChild(visibility)
+
+        // ! Réinitialisation du champs input une fois la requête envoyer.
+
+        document.querySelector('#location').value = ''
       } catch (error) {
         alert('Noms de ville incorrect, veuillez entrer une ville valide')
       }
