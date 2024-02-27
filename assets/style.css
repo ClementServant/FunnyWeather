@@ -103,8 +103,8 @@ body {
   height: auto;
   font-size: 18px;
 }
-.container .weather-box .location-box .wi-owm {
-  display: flex;
+.container .weather-box .location-box .icon-weather {
+  display: none;
   align-items: flex-end;
   justify-content: right;
   width: 50%;
