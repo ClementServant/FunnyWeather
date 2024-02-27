@@ -1,9 +1,12 @@
+// ! Importation de configApiKey
+import configApiKey from './config.js'
+
 document.addEventListener('DOMContentLoaded', async function () {
   document
     .querySelector('.fa-magnifying-glass')
     .addEventListener('click', async function () {
       const cityName = document.querySelector('#location').value
-      const apiKey = '165789c281f126a358566d015715b7db'
+      const apiKey = configApiKey.apiKey
 
       if (cityName) {
         const apiUrl =
@@ -34,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async function () {
           weatherDescription.classList.add('weather-description')
 
           const iconWeather = document.createElement('img')
-          iconWeather.className = `icon-weather, wi-owm-${weatherData.weather[0].icon}, wi-owm`
+          iconWeather.className = `icon-weather wi-owm-${weatherData.weather[0].icon} wi-owm`
 
           // WeatherDetails
 
