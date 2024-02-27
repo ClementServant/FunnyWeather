@@ -68,6 +68,7 @@ body {
   font-size: 25px;
   font-weight: 500;
   padding: 0 42px;
+  text-transform: uppercase;
 }
 .container .weather-box .search-bar #location::placeholder {
   text-transform: uppercase;

@@ -112,13 +112,10 @@ document.addEventListener('DOMContentLoaded', async function () {
           details.appendChild(containerVisibility)
           containerVisibility.appendChild(visibility)
         } catch (error) {
-          console.error(
-            'Erreur lors de la récupération des données météorologiques:',
-            error
-          )
+          alert('Noms de ville incorrect, veuillez entrer une ville valide')
         }
       } else {
-        console.error("Veuillez entrer le nom d'une ville.")
+        alert("Veuillez entrer le nom d'une ville")
       }
     })
 })
