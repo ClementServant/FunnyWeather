@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         iconDetails.classList.add('fa-solid', 'fa-wind')
 
         const detailsWeather = document.createElement('p')
-        detailsWeather.textContent = `${weatherData.wind.speed} m/s`
+        detailsWeather.textContent = ` Vent: ${weatherData.wind.speed} m/s`
         detailsWeather.classList.add('details-weather')
 
         const containerDroplet = document.createElement('div')
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         iconHumidity.classList.add('fa-solid', 'fa-droplet')
 
         const humidityInfos = document.createElement('p')
-        humidityInfos.textContent = `${weatherData.main.humidity} %`
+        humidityInfos.textContent = ` Humidité: ${weatherData.main.humidity} %`
         humidityInfos.classList.add('humidity-info')
 
         const containerPressure = document.createElement('div')
@@ -90,6 +90,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         const visibility = document.createElement('p')
         visibility.textContent = `Visibilité: ${weatherData.visibility} M`
         visibility.classList.add('visibility')
+
+        // Afficher latitude longitude et date et heure
+        const footerBox = document.querySelector('.footer-box')
+        footerBox.innerHTML = ''
 
         // + Ajout des éléments à location-box
         locationBox.appendChild(cityDescription)
@@ -115,6 +119,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         details.appendChild(containerVisibility)
         containerVisibility.appendChild(visibility)
+
+        // Afficher latitude longitude et date et heure
 
         // ! Réinitialisation du champs input une fois la requête envoyer.
 
@@ -157,7 +163,7 @@ function openWeatherIcon(weatherId) {
     case weatherId === 800:
       return '🌞'
     case weatherId >= 801 && weatherId < 810:
-      return '☁'
+      return '🌥'
     default:
       return '❓'
   }
