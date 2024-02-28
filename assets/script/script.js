@@ -1,6 +1,3 @@
-// ! Importation de configApiKey
-// import configApiKey from './config.js'
-
 document.addEventListener('DOMContentLoaded', async function () {
   // Fonction pour effectuer la recherche en fonction du nom de la ville
   const performSearch = async () => {
