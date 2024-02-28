@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         locationBox.innerHTML = ''
 
         // Créer les éléments HTML de façon dynamique
+        const cityDescription = document.createElement('div')
+        cityDescription.classList.add('city-description')
 
         const cityWeather = document.createElement('h2')
         cityWeather.textContent =
@@ -35,8 +37,9 @@ document.addEventListener('DOMContentLoaded', async function () {
         weatherDescription.textContent = weatherData.weather[0].description
         weatherDescription.classList.add('weather-description')
 
-        const iconWeather = document.createElement('img')
-        iconWeather.src = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`
+        const iconWeather = document.createElement('div')
+        const weatherId = weatherData.weather[0].id
+        iconWeather.textContent = openWeatherIcon(weatherId)
         iconWeather.classList.add('icon-weather')
 
         // WeatherDetails
@@ -89,9 +92,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         visibility.classList.add('visibility')
 
         // + Ajout des éléments à location-box
-        locationBox.appendChild(cityWeather)
+        locationBox.appendChild(cityDescription)
+        cityDescription.appendChild(cityWeather)
+        cityDescription.appendChild(weatherDescription)
         locationBox.appendChild(iconWeather)
-        locationBox.appendChild(weatherDescription)
 
         WeatherDetails.appendChild(detailsContainer)
         detailsContainer.appendChild(temperatureWeather)
@@ -137,3 +141,24 @@ document.addEventListener('DOMContentLoaded', async function () {
     .querySelector('.fa-magnifying-glass')
     .addEventListener('click', performSearch)
 })
+
+function openWeatherIcon(weatherId) {
+  switch (true) {
+    case weatherId >= 200 && weatherId < 300:
+      return '⛈'
+    case weatherId >= 300 && weatherId < 400:
+      return '🌧'
+    case weatherId >= 500 && weatherId < 600:
+      return '🌦'
+    case weatherId >= 600 && weatherId < 700:
+      return '❄'
+    case weatherId >= 700 && weatherId < 800:
+      return '🌫'
+    case weatherId === 800:
+      return '🌞'
+    case weatherId >= 801 && weatherId < 810:
+      return '☁'
+    default:
+      return '❓'
+  }
+}

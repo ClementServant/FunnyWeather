@@ -73,27 +73,38 @@
 
     .location-box {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       margin-top: 20px;
 
-      .city {
-        width: 50%;
+      .city-description {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 60%;
         height: auto;
-        font-size: 24px;
-      }
 
-      .weather-description {
-        width: 50%;
-        height: auto;
-        font-size: 18px;
+        .city {
+          display: flex;
+          justify-content: flex-start;
+          height: auto;
+          font-size: 24px;
+        }
+
+        .weather-description {
+          display: flex;
+          justify-content: flex-start;
+          height: auto;
+          font-size: 18px;
+        }
       }
 
       .icon-weather {
-        display: none;
-        align-items: flex-end;
-        justify-content: right;
-        width: 50%;
-        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        width: 40%;
       }
     }
 
