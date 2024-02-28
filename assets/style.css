@@ -124,6 +124,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 20px;
 }
 .container .weather-box .weather-details .details-container {
   display: flex;
@@ -190,9 +191,31 @@ body {
 }
 .container .weather-box .footer-box {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  margin-top: 20px;
+}
+.container .weather-box .footer-box .coordonne-box {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: left;
+}
+.container .weather-box .footer-box .coordonne-box .latitude-coord .longitude-coord {
+  font-size: 18px;
+  font-weight: 500;
+}
+.container .weather-box .footer-box .jour-heure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: auto;
+}
+.container .weather-box .footer-box .jour-heure .date-info .time-info {
+  font-size: 18px;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

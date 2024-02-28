@@ -1,11 +1,11 @@
 // ! Importation de configApiKey
-import configApiKey from './config.js'
+// import configApiKey from './config.js'
 
 document.addEventListener('DOMContentLoaded', async function () {
   // Fonction pour effectuer la recherche en fonction du nom de la ville
   const performSearch = async () => {
     const cityName = document.querySelector('#location').value
-    const apiKey = configApiKey.apiKey
+    const apiKey = '978646fe7dd496e28591e3a12d921e52'
 
     if (cityName) {
       const apiUrl =
@@ -95,6 +95,34 @@ document.addEventListener('DOMContentLoaded', async function () {
         const footerBox = document.querySelector('.footer-box')
         footerBox.innerHTML = ''
 
+        const coordonneBox = document.createElement('div')
+        coordonneBox.classList.add('coordonne-box')
+
+        const latitudeElement = document.createElement('p')
+        latitudeElement.textContent = `Latitude: ${weatherData.coord.lat}`
+        latitudeElement.classList.add('latitude-coord')
+
+        const longitudeElement = document.createElement('p')
+        longitudeElement.textContent = `Longitude: ${weatherData.coord.lon}`
+        longitudeElement.classList.add('longitude-coord')
+
+        const jourHeure = document.createElement('div')
+        jourHeure.classList.add('jour-heure')
+
+        const dateElement = document.createElement('p')
+        const timeElement = document.createElement('p')
+
+        // Ajoutez la classe à dateElement
+        dateElement.classList.add('date-info')
+        timeElement.classList.add('time-info')
+
+        // Mettre à jour l'heure toutes les 1000 millisecondes (1 seconde)
+        setInterval(() => {
+          const currentDate = new Date()
+          dateElement.textContent = `Date: ${currentDate.toLocaleDateString()}`
+          timeElement.textContent = `Heure: ${currentDate.toLocaleTimeString()}`
+        }, 1000)
+
         // + Ajout des éléments à location-box
         locationBox.appendChild(cityDescription)
         cityDescription.appendChild(cityWeather)
@@ -121,6 +149,13 @@ document.addEventListener('DOMContentLoaded', async function () {
         containerVisibility.appendChild(visibility)
 
         // Afficher latitude longitude et date et heure
+        footerBox.appendChild(coordonneBox)
+        coordonneBox.appendChild(latitudeElement)
+        coordonneBox.appendChild(longitudeElement)
+
+        footerBox.appendChild(jourHeure)
+        jourHeure.appendChild(dateElement)
+        jourHeure.appendChild(timeElement)
 
         // ! Réinitialisation du champs input une fois la requête envoyer.
 

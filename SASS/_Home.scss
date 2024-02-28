@@ -112,6 +112,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      margin-top: 20px;
 
       .details-container {
         display: flex;
@@ -190,9 +191,35 @@
 
     .footer-box {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      margin-top: 20px;
+
+      .coordonne-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: left;
+
+        .latitude-coord .longitude-coord {
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+
+      .jour-heure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: auto;
+
+        .date-info .time-info {
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
     }
   }
 }
