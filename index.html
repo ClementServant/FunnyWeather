@@ -15,8 +15,7 @@
       src="https://kit.fontawesome.com/21c3409e61.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./assets/script/config.js"></script>
-    <script type="module" src="./assets/script/script.js" async defer></script>
+    <script src="./assets/script/script.js" async defer></script>
   </head>
   <body>
     <header class="title">
@@ -28,17 +27,20 @@
         <div class="weather-box">
           <div class="search-bar">
             <i class="fa-solid fa-location-dot"></i>
-            <label for="location"></label>
-            <input
-              type="text"
-              name="location"
-              id="location"
-              placeholder="Entrer votre ville"
-            />
-            <button
-              aria-label="Rechercher"
-              class="fa-solid fa-magnifying-glass"
-            ></button>
+            <form id="search-form">
+              <label for="location"></label>
+              <input
+                type="text"
+                name="location"
+                id="location"
+                placeholder="Entrer votre ville"
+              />
+              <button
+                aria-label="Rechercher"
+                class="fa-solid fa-magnifying-glass"
+                type="button"
+              ></button>
+            </form>
           </div>
           <div class="location-box"></div>
           <div class="weather-details"></div>

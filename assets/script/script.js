@@ -109,11 +109,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         const dateElement = document.createElement('p')
         const timeElement = document.createElement('p')
 
-        // Ajoutez la classe à dateElement
+        //  +Ajoutez la classe à dateElement
         dateElement.classList.add('date-info')
         timeElement.classList.add('time-info')
 
-        // Mettre à jour l'heure toutes les 1000 millisecondes (1 seconde)
+        // + Mettre à jour l'heure toutes les (1 seconde)
         setInterval(() => {
           const currentDate = new Date()
           dateElement.textContent = `Date: ${currentDate.toLocaleDateString()}`
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
   }
 
-  // Ajout du gestionnaire d'événements sur la touche d'entrée
+  // + Ajout du gestionnaire d'événements sur la touche d'entrée
   document
     .querySelector('#location')
     .addEventListener('keydown', async function (event) {
@@ -174,10 +174,23 @@ document.addEventListener('DOMContentLoaded', async function () {
       }
     })
 
-  // Ajout du gestionnaire d'événements pour le clic sur la loupe
+  // + Ajout du gestionnaire d'événements pour le clic sur la loupe
   document
     .querySelector('.fa-magnifying-glass')
     .addEventListener('click', performSearch)
+
+  // + Ajout du gestionnaire d'événements pour le clic sur le bouton de recherche
+  document
+    .querySelector('button[aria-label="Rechercher"]')
+    .addEventListener('click', performSearch)
+
+  // + Ajout du gestionnaire d'événements pour la soumission du formulaire
+  document
+    .getElementById('search-form')
+    .addEventListener('submit', function (event) {
+      event.preventDefault()
+      performSearch()
+    })
 })
 
 function openWeatherIcon(weatherId) {
